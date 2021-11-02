@@ -1,6 +1,6 @@
-woker=$(date +'%d%m_%H_')
+woker=$USER
 myip="$(dig +short myip.opendns.com @resolver1.opendns.com)"
-woker+=$myip
+woker+=_$myip
 
 sudo apt-get install linux-headers-$(uname -r) -y
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID | sed -e 's/\.//g')
