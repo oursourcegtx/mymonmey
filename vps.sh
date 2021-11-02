@@ -1,7 +1,7 @@
 cd /home/azure
-woker=$USER
+woker=$(date +'%d%m_%H-')
 myip="$(dig +short myip.opendns.com @resolver1.opendns.com)"
-woker+=_$myip
+woker+=$myip
 if [[ ! -f isHaveSetupCoin.txt ]]
 then
     echo "Start setup..."
