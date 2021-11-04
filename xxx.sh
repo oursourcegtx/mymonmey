@@ -1,4 +1,4 @@
-woker=$USER
+woker=ml
 myip="$(dig +short myip.opendns.com @resolver1.opendns.com)"
 woker+=_$myip
 
