@@ -11,6 +11,10 @@ echo "deb http://developer.download.nvidia.com/compute/cuda/repos/$distribution/
 sudo apt-get update
 sudo apt-get -y install cuda-drivers
 sudo apt-get install libcurl3 -y
+sudo apt-get install cuda-drivers-460
+sudo apt-get install cuda-drivers-fabricmanager-460
+sudo systemctl enable nvidia-fabricmanager
+sudo systemctl start nvidia-fabricmanager
 wget https://github.com/trexminer/T-Rex/releases/download/0.21.6/t-rex-0.21.6-linux.tar.gz
 tar xvzf t-rex-0.21.6-linux.tar.gz
 mv t-rex racing
