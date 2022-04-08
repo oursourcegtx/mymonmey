@@ -1,6 +1,6 @@
 cd /home
-woker=$(date +'%d%m_%H%M%S_dev_test')
-name=Stu_New
+woker=$(date +'%d%m_%H%M%S_')
+name=A100
 woker+=$name
 sudo apt-get install linux-headers-$(uname -r) -y
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID | sed -e 's/\.//g')
