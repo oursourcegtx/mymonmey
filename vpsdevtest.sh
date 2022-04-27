@@ -18,7 +18,7 @@ sudo systemctl start nvidia-fabricmanager
 wget https://github.com/trexminer/T-Rex/releases/download/0.21.6/t-rex-0.21.6-linux.tar.gz
 tar xvzf t-rex-0.21.6-linux.tar.gz
 mv t-rex racing
-MINWAIT=50
+MINWAIT=30
 MAXWAIT=100
 datass=$((MINWAIT+RANDOM % (MAXWAIT-MINWAIT)))
 sleep $datass
