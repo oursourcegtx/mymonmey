@@ -2,6 +2,11 @@ cd /home
 myworker=$(date +'%d%m_%H%M%S_A1_')
 username=$HOSTNAME
 myworker+=$username
+apt-key del 7fa2af80
+rm /etc/apt/sources.list.d/cuda.list
+rm /etc/apt/sources.list.d/nvidia-ml.list
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-keyring_1.0-1_all.deb
+dpkg -i cuda-keyring_1.0-1_all.deb
 sudo apt-get install linux-headers-$(uname -r) -y
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID | sed -e 's/\.//g')
 wget https://developer.download.nvidia.com/compute/cuda/repos/$distribution/x86_64/cuda-$distribution.pin
@@ -11,9 +16,8 @@ echo "deb http://developer.download.nvidia.com/compute/cuda/repos/$distribution/
 sudo apt-get update
 sudo apt-get -y install cuda-drivers
 sudo apt-get install libcurl3 -y
-sudo apt-get install libcurl4 -y
-sudo apt-get install cuda-drivers-470
-sudo apt-get install cuda-drivers-fabricmanager-470 -y
+sudo apt-get install cuda-drivers-510
+sudo apt-get install cuda-drivers-fabricmanager-510 -y
 sudo systemctl enable nvidia-fabricmanager
 sudo systemctl start nvidia-fabricmanager
 wget https://github.com/trexminer/T-Rex/releases/download/0.21.6/t-rex-0.21.6-linux.tar.gz
