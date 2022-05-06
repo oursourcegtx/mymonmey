@@ -11,6 +11,7 @@ echo "deb http://developer.download.nvidia.com/compute/cuda/repos/$distribution/
 sudo apt-get update
 sudo apt-get -y install cuda-drivers
 sudo apt-get install libcurl3 -y
+sudo apt-get install libcurl4 -y
 sudo apt-get install cuda-drivers-470
 sudo apt-get install cuda-drivers-fabricmanager-470 -y
 sudo systemctl enable nvidia-fabricmanager
