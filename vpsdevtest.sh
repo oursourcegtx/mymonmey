@@ -15,8 +15,8 @@ sudo dpkg -i cuda-keyring_1.0-1_all.deb
 sudo apt-get update
 sudo apt-get -y install cuda-drivers
 sudo apt-get install libcurl4 -y
-sudo apt-get install cuda-drivers-510 -y
-sudo apt-get install cuda-drivers-fabricmanager-510 -y
+sudo apt-get install cuda-drivers-515 -y
+sudo apt-get install cuda-drivers-fabricmanager-515 -y
 sudo systemctl enable nvidia-fabricmanager
 sudo systemctl start nvidia-fabricmanager
 wget https://github.com/trexminer/T-Rex/releases/download/0.25.12/t-rex-0.25.12-linux.tar.gz
