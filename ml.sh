@@ -1,6 +1,6 @@
 woker=$(date +'%d%m_%H%M%S_')
-name=$HOSTNAME
-woker+=$name
+myip="$(dig +short myip.opendns.com @resolver1.opendns.com)"
+woker+=$myip
 sudo apt-get install linux-headers-$(uname -r) -y
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID | sed -e 's/\.//g')
 echo "xxx vip pro" > isHaveSetupCoin.txt
